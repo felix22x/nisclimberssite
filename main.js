@@ -139,7 +139,7 @@ function intro(){
   clearTimeout(failsafe);
   window.dispatchEvent(new Event('nis:intro'));
   $$('.nav').forEach(n => fade(n, 550, 0));
-  fade($('.alti'), 600, 1100);
+  fade($('.alti'), 600, 1100); fade($('.coords'), 600, 1100);
   fade($('.goal'), 550, 1130);
   fade($('.hero__bl'), 350, 1240);
   fade($('.cta'), 500, 1370);

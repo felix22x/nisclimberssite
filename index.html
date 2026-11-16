@@ -15,16 +15,28 @@
 </head>
 <body>
 
+<!-- backdrop: sunburst rays like an expedition poster -->
+<div class="backdrop" aria-hidden="true">
+  <svg viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice"><g stroke="#f8f6f4" stroke-width="1" opacity=".09"><line x1="800" y1="560" x2="-600" y2="560"/><line x1="800" y1="560" x2="-588" y2="377"/><line x1="800" y1="560" x2="-552" y2="198"/><line x1="800" y1="560" x2="-493" y2="24"/><line x1="800" y1="560" x2="-412" y2="-140"/><line x1="800" y1="560" x2="-311" y2="-292"/><line x1="800" y1="560" x2="-190" y2="-430"/><line x1="800" y1="560" x2="-52" y2="-551"/><line x1="800" y1="560" x2="100" y2="-652"/><line x1="800" y1="560" x2="264" y2="-733"/><line x1="800" y1="560" x2="438" y2="-792"/><line x1="800" y1="560" x2="617" y2="-828"/><line x1="800" y1="560" x2="800" y2="-840"/><line x1="800" y1="560" x2="983" y2="-828"/><line x1="800" y1="560" x2="1162" y2="-792"/><line x1="800" y1="560" x2="1336" y2="-733"/><line x1="800" y1="560" x2="1500" y2="-652"/><line x1="800" y1="560" x2="1652" y2="-551"/><line x1="800" y1="560" x2="1790" y2="-430"/><line x1="800" y1="560" x2="1911" y2="-292"/><line x1="800" y1="560" x2="2012" y2="-140"/><line x1="800" y1="560" x2="2093" y2="24"/><line x1="800" y1="560" x2="2152" y2="198"/><line x1="800" y1="560" x2="2188" y2="377"/><line x1="800" y1="560" x2="2200" y2="560"/></g></svg>
+</div>
 <!-- 3D background -->
 <canvas id="gl" aria-hidden="true"></canvas>
+<!-- map labels (positioned from 3D) -->
+<div class="labels" aria-hidden="true">
+  <div class="lbl lbl--main" data-lb="ev"><b data-i="lb_ev"></b><span>8 848</span></div>
+  <div class="lbl" data-lb="lh"><b data-i="lb_lh"></b><span>8 516</span></div>
+  <div class="lbl" data-lb="nu"><b data-i="lb_nu"></b><span>7 861</span></div>
+  <div class="lbl" data-lb="ch"><b data-i="lb_ch"></b><span>7 543</span></div>
+  <div class="lbl lbl--bc" data-lb="bc"><b data-i="lb_bc"></b><span>5 364</span></div>
+</div>
 
 <!-- fixed frame with notch (like a viewfinder) -->
 <div class="bezel" aria-hidden="true"></div>
 <svg class="notch" viewBox="0 0 560 61" preserveAspectRatio="none" aria-hidden="true">
-  <path d="M0 0C34 0 46 6 60 22L78 44C88 56 98 61 116 61H444C462 61 472 56 482 44L500 22C514 6 526 0 560 0Z"/>
+  <path d="M0 0H560L506 61H54Z"/>
 </svg>
 <svg class="notch notch--b" viewBox="0 0 560 61" preserveAspectRatio="none" aria-hidden="true">
-  <path d="M0 0C34 0 46 6 60 22L78 44C88 56 98 61 116 61H444C462 61 472 56 482 44L500 22C514 6 526 0 560 0Z"/>
+  <path d="M0 0H560L506 61H54Z"/>
 </svg>
 <a href="#top" class="logo"><img src="logo.svg" alt=""><span>NIS CLIMBERS</span></a>
 
@@ -41,6 +53,8 @@
   <a href="#join" class="pill pill--light" data-i="n_join"></a>
 </nav>
 
+<i class="mark tl"></i><i class="mark tr"></i><i class="mark bl"></i><i class="mark br"></i>
+<div class="coords hid">27°59′17″ N · 86°55′31″ E</div>
 <!-- altimeter -->
 <div class="alti hid" aria-hidden="true">
   <span class="alti__label" data-i="alt"></span>

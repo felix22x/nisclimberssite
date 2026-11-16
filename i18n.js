@@ -1,6 +1,7 @@
 // Тексты сайта на трёх языках. Всё, что помечено как «пример», — заглушки: замените на реальные данные.
 window.I18N = {
   ru: {
+    lb_ev: 'Эверест', lb_lh: 'Лхоцзе', lb_nu: 'Нупцзе', lb_ch: 'Чангзе', lb_bc: 'Базовый лагерь',
     n_about: 'О клубе', n_team: 'Команда', n_ach: 'Достижения', n_gal: 'Галерея', n_join: 'Записаться',
     alt: 'Высота', m: 'м',
     h_l1: 'Клуб скалолазания NIS', h_l2: 'Выше ', h_l2s: 'облаков!',
@@ -28,6 +29,7 @@ window.I18N = {
     c_addr: 'Адрес школы'
   },
   kk: {
+    lb_ev: 'Эверест', lb_lh: 'Лхоцзе', lb_nu: 'Нупцзе', lb_ch: 'Чангзе', lb_bc: 'Базалық лагерь',
     n_about: 'Клуб туралы', n_team: 'Команда', n_ach: 'Жетістіктер', n_gal: 'Галерея', n_join: 'Жазылу',
     alt: 'Биіктік', m: 'м',
     h_l1: 'NIS өрмелеу клубы', h_l2: 'Бұлттан ', h_l2s: 'биік!',
@@ -55,6 +57,7 @@ window.I18N = {
     c_addr: 'Мектеп мекенжайы'
   },
   en: {
+    lb_ev: 'Everest', lb_lh: 'Lhotse', lb_nu: 'Nuptse', lb_ch: 'Changtse', lb_bc: 'Base camp',
     n_about: 'About', n_team: 'Team', n_ach: 'Achievements', n_gal: 'Gallery', n_join: 'Join',
     alt: 'Altitude', m: 'm',
     h_l1: 'NIS Climbing Club', h_l2: 'Above the ', h_l2s: 'clouds!',
