@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NIS Climbers</title>
+<meta name="description" content="NIS Climbers — клуб скалолазания Назарбаев Интеллектуальной школы.">
+<meta name="theme-color" content="#02061a">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,100..1000&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<!-- 3D background -->
+<canvas id="gl" aria-hidden="true"></canvas>
+
+<!-- fixed frame with notch (like a viewfinder) -->
+<div class="bezel" aria-hidden="true"></div>
+<svg class="notch" viewBox="0 0 560 61" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 0C34 0 46 6 60 22L78 44C88 56 98 61 116 61H444C462 61 472 56 482 44L500 22C514 6 526 0 560 0Z"/>
+</svg>
+<svg class="notch notch--b" viewBox="0 0 560 61" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 0C34 0 46 6 60 22L78 44C88 56 98 61 116 61H444C462 61 472 56 482 44L500 22C514 6 526 0 560 0Z"/>
+</svg>
+<a href="#top" class="logo"><img src="logo.svg" alt=""><span>NIS CLIMBERS</span></a>
+
+<nav class="nav nav--l hid">
+  <a href="#about" data-i="n_about"></a>
+  <a href="#team" data-i="n_team"></a>
+  <a href="#ach" data-i="n_ach"></a>
+</nav>
+<nav class="nav nav--r hid">
+  <a href="#gallery" data-i="n_gal"></a>
+  <div class="lang" role="group" aria-label="Language">
+    <button data-lang="ru">RU</button><button data-lang="kk">KZ</button><button data-lang="en">EN</button>
+  </div>
+  <a href="#join" class="pill pill--light" data-i="n_join"></a>
+</nav>
+
+<!-- altimeter -->
+<div class="alti hid" aria-hidden="true">
+  <span class="alti__label" data-i="alt"></span>
+  <div class="alti__bar"><i id="altiMark"></i></div>
+  <b id="altiVal">5 364</b><span class="alti__unit" data-i="m"></span>
+</div>
+
+<main id="top">
+
+  <!-- 1. HERO -->
+  <section class="hero" id="hero">
+    <h1 class="headline">
+      <span class="ln" data-split="h_l1"></span>
+      <span class="ln"><span data-split="h_l2"></span><span class="sten" data-split="h_l2s" data-stencil></span></span>
+    </h1>
+    <div class="cta hid">
+      <a href="#join" class="pill pill--light" data-i="h_cta"></a>
+      <a href="#about" class="pill pill--ghost" data-i="h_cta2"></a>
+    </div>
+
+    <div class="hero__bl hid">
+      <div class="avatars"><span>А</span><span>Д</span><span>М</span><span>+</span></div>
+      <p data-i="h_text"></p>
+    </div>
+    <div class="goal hid">
+      <span class="goal__tag" data-i="goal"></span>
+      <b>8 848 <small data-i="m"></small></b>
+      <span data-i="goal_sub"></span>
+    </div>
+  </section>
+
+  <!-- 2. ABOUT -->
+  <section class="sec about" id="about">
+    <div class="outline" id="outline" aria-hidden="true" data-i="everest"></div>
+    <div class="col col--l">
+      <span class="kicker">01 — <span data-i="n_about"></span></span>
+      <h2 class="h2" data-split="a_title"></h2>
+      <p class="lead" data-i="a_lead"></p>
+      <div class="disc">
+        <article class="glass fadein"><b>01</b><h3 data-i="d1"></h3><p data-i="d1t"></p></article>
+        <article class="glass fadein"><b>02</b><h3 data-i="d2"></h3><p data-i="d2t"></p></article>
+        <article class="glass fadein"><b>03</b><h3 data-i="d3"></h3><p data-i="d3t"></p></article>
+        <article class="glass fadein"><b>04</b><h3 data-i="d4"></h3><p data-i="d4t"></p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. TEAM -->
+  <section class="sec team" id="team">
+    <div class="col col--r">
+      <span class="kicker">02 — <span data-i="n_team"></span></span>
+      <h2 class="h2" data-split="t_title"></h2>
+      <p class="lead" data-i="t_lead"></p>
+      <div class="members" id="members"></div>
+    </div>
+  </section>
+
+  <!-- 4. ACHIEVEMENTS + MARQUEE -->
+  <section class="sec marq" id="ach">
+    <div class="row row1" id="row1" aria-hidden="true"></div>
+    <div class="row row2" id="row2" aria-hidden="true"></div>
+    <div class="card glass">
+      <span class="tag hid" data-i="lvl"></span>
+      <h2 class="card__title">
+        <span class="ln" data-split="c_l1"></span>
+        <span class="ln sten" data-split="c_l2" data-stencil></span>
+      </h2>
+      <div class="ach" id="achList"></div>
+    </div>
+  </section>
+
+  <!-- 5. GALLERY -->
+  <section class="sec gallery" id="gallery">
+    <div class="col col--r">
+      <span class="kicker">04 — <span data-i="n_gal"></span></span>
+      <h2 class="h2" data-split="g_title"></h2>
+      <div class="tiles" id="tiles"></div>
+      <div class="news" id="news"></div>
+    </div>
+  </section>
+
+  <!-- 6. JOIN -->
+  <section class="sec join" id="join">
+    <div class="col col--l">
+      <span class="kicker">05 — <span data-i="n_join"></span></span>
+      <h2 class="h2" data-split="j_title"></h2>
+      <p class="lead" data-i="j_lead"></p>
+      <form class="form glass" id="form">
+        <label><span data-i="f_name"></span><input name="name" required autocomplete="name"></label>
+        <label><span data-i="f_grade"></span><input name="grade" placeholder="9B"></label>
+        <label class="full"><span data-i="f_contact"></span><input name="contact" required></label>
+        <label class="full"><span data-i="f_level"></span>
+          <select name="level"><option data-i="f_l1"></option><option data-i="f_l2"></option><option data-i="f_l3"></option></select>
+        </label>
+        <button class="pill pill--light" type="submit" data-i="f_send"></button>
+        <p class="form__ok" id="formOk" role="status"></p>
+      </form>
+      <ul class="contacts">
+        <li><span data-i="c_addr"></span></li>
+        <li><a href="#">Instagram · @nisclimbers</a></li>
+        <li><a href="#">Telegram · t.me/nisclimbers</a></li>
+      </ul>
+      <p class="copy">© <span id="yr"></span> NIS Climbers</p>
+    </div>
+  </section>
+</main>
+
+<script src="i18n.js"></script>
+<script src="main.js"></script>
+<script type="module" src="scene.js"></script>
+</body>
+</html>
